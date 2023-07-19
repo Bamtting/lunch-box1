@@ -140,4 +140,60 @@ window.onload = function () {
       swiper.slideToLoop(index, 500, false);
     });
   });
+  // business slide
+  const swBusiness = new Swiper(".sw-business", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+  // business-modal 기능
+  const businessModal = document.querySelector(".business-modal");
+  businessModal.addEventListener("click", function () {
+    businessModal.style.display = "none";
+  });
+
+  // 위로가기 active 추가
+  const gotop = document.querySelector(".gotop");
+  gotop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  //  footer 상단 위치 px값으로 파악하기
+  let footer = document.querySelector(".footer");
+  let footerY = footer.offsetTop; // scroll 했을때 Y의 값
+  let waypoint_footer = new Waypoint({
+    element: document.querySelector(".footer"),
+    handler: function (direction) {
+      if (direction === "down") {
+        gotop.classList.add("active-footer");
+      } else {
+        gotop.classList.remove("active-footer");
+      }
+    },
+    offset: "95%",
+  });
+  let waypoint_service = new Waypoint({
+    element: document.querySelector(".service"),
+    handler: function (direction) {
+      if (direction === "down") {
+        gotop.classList.add("active");
+      } else {
+        gotop.classList.remove("active");
+      }
+    },
+    offset: "80%",
+  });
+  var study_Modal = document.querySelector(".study");
+  var studyBackground = document.querySelector(".study_background");
+  var closeBtn = document.querySelector(".close");
+  closeBtn.addEventListener("click", function (e) {
+    study_Modal.style.display = "none";
+    studyBackground.style.display = "none";
+  });
 };
