@@ -769,6 +769,15 @@ body {
     line-height: 40px;
     font-size: 14px;
   }
+  .footer-list span {
+    display: block;
+  }
+  .footer-bar {
+    display: none;
+  }
+  .footer-list {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 480px) {
   .business a img {
@@ -823,17 +832,7 @@ body {
   height: 10px;
   background-color: #666;
 }
-@media screen and (max-width: 640px) {
-  .footer-list span {
-    display: block;
-  }
-  .footer-bar {
-    display: none;
-  }
-  .footer-list {
-    font-size: 14px;
-  }
-}
+
 /* 위로 가기 */
 .gotop {
   position: fixed;
