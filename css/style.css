@@ -403,7 +403,6 @@ body {
 }
 .service-wrap {
   width: calc(100% - 20px * 2);
-  background-color: azure;
   margin: 0 auto;
   max-width: 1420px;
   display: grid;
